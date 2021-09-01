@@ -10,7 +10,7 @@ import com.bridgeLabz.stacks.MyStack;
 public class QueueTest {
 
 	@Test
-	public void stackAddTest() {
+	public void queueAddTest() {
 		MyQueue<Integer> queue = new MyQueue<>();
 
 		INode<Integer> node1 = new MyNode<>(56);
@@ -26,4 +26,27 @@ public class QueueTest {
 		Assert.assertEquals(queue.peak(), node1);
 
 	}
+	
+	@Test
+	public void dequeueTest() {
+		MyQueue<Integer> queue = new MyQueue<>();
+
+		INode<Integer> node1 = new MyNode<>(56);
+		INode<Integer> node2 = new MyNode<>(30);
+		INode<Integer> node3 = new MyNode<>(70);
+
+		queue.add(node1);
+		queue.add(node2);
+		queue.add(node3);
+		
+		queue.printQueue();
+		
+		queue.dequeue();
+		
+		queue.printQueue();
+		
+		Assert.assertEquals(queue.peak(), node2);
+
+	}
 }
+
