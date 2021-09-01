@@ -3,7 +3,7 @@ package com.bridgeLabz.linkedList;
 public class MyLinkedList<K extends Comparable <K>> {
 
 	public INode<K> head;
-	INode<K> tail;
+	public INode<K> tail;
 
 	public static void main(String args[]) {
 
