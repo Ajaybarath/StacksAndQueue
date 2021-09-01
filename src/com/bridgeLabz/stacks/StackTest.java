@@ -14,13 +14,37 @@ public class StackTest {
 	public void stackAddTest() {
 		MyStack<Integer> stack = new MyStack<>();
 
-		INode<Integer> node1 = new MyNode(56);
+		INode<Integer> node1 = new MyNode<>(56);
 		INode<Integer> node2 = new MyNode<>(30);
 		INode<Integer> node3 = new MyNode<>(70);
 
 		stack.push(node3);
 		stack.push(node2);
 		stack.push(node1);
+		
+		Assert.assertEquals(stack.head(), node1);
+
+	}
+	
+	@Test
+	public void headAndPopTest() {
+		MyStack<Integer> stack = new MyStack<>();
+
+		INode<Integer> node1 = new MyNode<>(56);
+		INode<Integer> node2 = new MyNode<>(30);
+		INode<Integer> node3 = new MyNode<>(70);
+
+		stack.push(node3);
+		stack.push(node2);
+		stack.push(node1);
+		
+		stack.printStack();
+
+		INode popNode = stack.pop();
+				
+		stack.printStack();
+		
+	    Assert.assertEquals(popNode, node1);
 
 	}
 }
