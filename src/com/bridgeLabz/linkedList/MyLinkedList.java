@@ -82,7 +82,7 @@ public class MyLinkedList<K extends Comparable <K>> {
 		return popNode;
 	}
 
-	public void popLast() {
+	public INode<K> popLast() {
 
 		INode<K> tempNode = head;
 
@@ -90,9 +90,13 @@ public class MyLinkedList<K extends Comparable <K>> {
 			tempNode = tempNode.getNext();
 		}
 
+		INode popNode = tempNode.getNext();
+
 		tempNode.setNext(null);
 
 		tail = tempNode;
+		
+		return popNode;
 
 	}
 
