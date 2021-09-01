@@ -23,4 +23,8 @@ public class MyQueue<K> {
 	public void printQueue() {
 		queue.printNode();
 	}
+	
+	public INode<K> dequeue() {
+		return (INode<K>) queue.pop();
+	}
 }
