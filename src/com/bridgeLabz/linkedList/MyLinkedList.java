@@ -2,7 +2,7 @@ package com.bridgeLabz.linkedList;
 
 public class MyLinkedList<K extends Comparable <K>> {
 
-	INode<K> head;
+	public INode<K> head;
 	INode<K> tail;
 
 	public static void main(String args[]) {
@@ -76,8 +76,10 @@ public class MyLinkedList<K extends Comparable <K>> {
 
 	}
 
-	public void pop() {
-		head = head.getNext();
+	public INode<K> pop() {
+		INode popNode = head;
+		this.head = head.getNext();
+		return popNode;
 	}
 
 	public void popLast() {
